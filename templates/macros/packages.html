@@ -1,8 +1,0 @@
-{% import "macros/package.html" as package %}
-{% macro packages(packages) %}
-<ul class="pkg-list">
-  {% for pkg_name in packages %}
-  {{ package::package(pkg_name=pkg_name) }}
-  {% endfor %}
-</ul>
-{% endmacro packages %}

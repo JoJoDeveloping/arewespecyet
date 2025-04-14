@@ -9,12 +9,12 @@
     <div class="meta">
       Published {{page.date | date}} {% if page.extra.tags %}
       under <ul>
-      {% for tag in page.extra.tags %}
-      <li>
-        {{tag}}
-      </li>
-      {% endfor %}
-    </ul>
+        {% for tag in page.extra.tags %}
+        <li>
+          {{tag}}
+        </li>
+        {% endfor %}
+      </ul>
       {% endif %}
     </div>
 
@@ -30,7 +30,7 @@
 
         {% if page.extra.source.author %}
         by <span class="name">{{page.extra.source.author}}</a>
-        {% endif %} :
+          {% endif %} :
       </cite>
       {{ page.content | safe }}
     </blockquote>
@@ -39,14 +39,5 @@
     {% endif %}
   </div>
 
-  {% set authors = load_data(path="authors.toml") %}
-  {% for key, value in authors %}
-  {% if key == page.extra.source.author %}
-  <section class="authors">
-    <h3>Author</h3>
-    {{ author::author(key=key,author=authors[key]) }}
-  </section>
-  {% endif %}
-  {% endfor %}
 </article>
 {% endblock content %}

@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% import "macros/level.html" as level %}
 
 {% block content %}
 <article class="article">
@@ -11,7 +10,6 @@
 
     <h2>
       <a href="{{ page.permalink | safe }}">{{ page.title | safe }}</a>
-      {{ level::level(level=page.extra.level) }}
     </h2>
 
     {% if page.extra.intro %}

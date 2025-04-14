@@ -4,24 +4,24 @@
 <head>
   <meta charset=utf-8>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel=stylesheet href={{ get_url(path="styles.css") }}>
-  <link rel=stylesheet href={{ get_url(path="gh-fork-ribbon.css") }}>
+  <link rel=stylesheet href={{ get_url(path="styles.css" ) }}>
+  <link rel=stylesheet href={{ get_url(path="gh-fork-ribbon.css" ) }}>
   <link href=/atom.xml type=application/atom+xml rel=alternate title="Atom feed (for state changes and news)">
-  <title>{% if page.title %}{{page.title}} » AWWY?{% else %}Are we web yet? Yes, and it's freaking fast! {% endif %}</title>
+  <title>Are We Spec Yet? No!</title>
   <meta name="description"
-    content="AreWeWebYet gives insight on whether you can build your latest web-project on top of Rust" />
+    content="AreWeSpecYet gives insight into the progress towards a formal specification for Rust" />
 
-  <link rel="icon" href="{{ get_url(path="favicon.ico") }}">
+  <link rel="icon" href="{{ get_url(path=" favicon.ico") }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
   <!--  ALL THE STANDARDS for an image!-->
-  <meta itemprop="image" content={{ get_url(path="screenshot.png") }} />
-  <meta name="twitter:image" content={{ get_url(path="screenshot.png") }} />
-  <meta property="og:image" content={{ get_url(path="screenshot.png") }} />
+  <meta itemprop="image" content={{ get_url(path="screenshot.png" ) }} />
+  <meta name="twitter:image" content={{ get_url(path="screenshot.png" ) }} />
+  <meta property="og:image" content={{ get_url(path="screenshot.png" ) }} />
 
   <!-- Open Graph extra -->
-  <meta property="og:site_name" content="Are We Web Yet?" />
+  <meta property="og:site_name" content="Are We Spec Yet?" />
 </head>
 
 <body>
@@ -33,12 +33,6 @@
 
   <footer>
     <div class="devider">
-      <!-- FIXME: put the Rust Web-WG Brand here?-->
-      <!--         <div class="logo">
-          <a href="http://www.bashy.io" title="a Bashy Production">
-            <img src="/bashy-big.svg" alt="logo" />
-          </a>
-        </div> -->
       <div class="links">
         <ul class="pages">
           <li>
@@ -51,13 +45,10 @@
             <a href="/topics/">Topics</a>
           </li>
           <li>
-            <a href="/curators/">Curators</a>
-          </li>
-          <li>
             <a href="/about/">About</a>
           </li>
           <li>
-            <a href="https://github.com/rust-lang/arewewebyet/#contributing">Contribute</a>
+            <a href="https://github.com/JoJoDeveloping/arewespecyet/#contributing">Contribute</a>
           </li>
         </ul>
       </div>
@@ -65,10 +56,10 @@
     <p class="last-updated">
       {% set build_time = get_env(name="CURRENT_TIME", default=false) %}
       {% if build_time %}
-        Last updated {{ build_time }} -
+      Last updated {{ build_time }} -
       {% endif %}
 
-      <a href="https://github.com/rust-lang/arewewebyet/#license">CC-BY-4.0</a>
+      <a href="https://github.com/JoJoDeveloping/arewespecyet/#license">CC-BY-4.0</a>
     </p>
   </footer>
 </body>

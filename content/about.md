@@ -1,44 +1,22 @@
 +++
-title = "About AWWY"
+title = "About Are We Spec Yet"
 +++
 
 ## About
 
-Are We Web Yet – or AWWY (pronounced _a-we?_) for short – tries to answer the question: **Can I use Rust to do web development (yet)?**
+Are We Spec Yet tries to answer the question: **Does Rust have a specification (yet)?**
 
 ## How to use the site
 
-This website has various features that make your life easier researching whether you can use Rust for the web development already or not. While some stuff is possible already, other parts are still challenging and this website wants to give you insight for your particular case. The easiest is to start looking into the [topics](/topics/) most relevant for you.
+This website attempts to track the progress of all those working towards giving Rust a (formal) specification.
+This includes specifications in prose and using formal language, and includes specification of the type system, trait system, semantics, the grammar, and maybe even other parts like the macro system.
 
-While most things should be rather quick to comprehend, there are some features, we'd like to explain to you a little deeper to improve the speed with which you can answer the question for you.
+We also try to track which of these are "official" or otherwise blessed by official Rust teams.
+Once a usable specification exists, we will start tracking its adoption by the various tools that consume Rust and aim to give formal guarantees, like Rust verifiers.
 
-### The Package Info
-
-![Package Info](/about/package-info.png)
-
-For each package we list the most important information in one quick view. Aside from the package id (`hyper`), the header shows various links – if available: the crate.io-page, the homepage, the documentation and to the source code. Tip: When you hover over name, it also shows when the package was created and last updated.
-
-In the second row features the latest published version number, how often the package has been downloaded so far and how it is licensed – all as pretty badges of live data pulled from [shields.io](http://shields.io/).
-
-Under that you can find the short description provided for that package.
-
-### Understanding the level indicator
-
-Throughout the app – mostly on section titles – you find the small `level indicators`: a colored glyph, which should give you a hint on the maturity of the subject overall as designated by the [curators](/curators/). The following indicators are available:
-
-<ul>
-  <li>{{ level(level=0) }} – everything is awesome<a href="https://www.youtube.com/watch?v=9cQgQIMlwWw" target="_blank">™</a>: stable, tested and mature</li>
-  <li>{{ level(level=1) }} – stuff's pretty great</li>
-  <li>{{ level(level=2) }} – getting there, stable but still maturing</li>
-  <li>{{ level(level=3) }} – not yet stable, but progressing</li>
-  <li>{{ level(level=4) }} – unstable/incomplete, needs work</li>
-  <li>{{ level(level=5) }} – barely there, needs serious work</li>
-  <li>{{ level(level=6) }} – basically non-existent</li>
-</ul>
-
-If you need a reminder, you can also just hover over the glyph to get the text.
 
 
 ## Credits
 
-This project is hosted and largely developed by [The Bashy](http://bashy.io/), specifically [Benjamin Kampmann](/curators/#ben). The content is curated by the [curators](/curators/). The first version was developed and hosted by [Chris Morgan](https://github.com/chris-morgan). All content is licensed under the [Creative Commons Attribution License (International)](https://github.com/bashyHQ/arewewebyet/blob/gh-pages/LICENSE).
+All content is licensed under the [Creative Commons Attribution License (International)](https://github.com/JoJoDeveloping/arewespecyet/blob/master/LICENSE).
+The template and styles for this website are from [Are We Web Yet](https://arewewebyet.rs).

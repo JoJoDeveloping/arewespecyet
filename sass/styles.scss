@@ -7,10 +7,8 @@
 @import "styles/fonts";
 @import "styles/footer";
 @import "styles/home";
-@import "styles/level-indicator";
 @import "styles/links";
 @import "styles/news";
-@import "styles/pkg";
 @import "styles/topic";
 
 .article {
@@ -49,7 +47,8 @@
   font-size: 0.65em;
 }
 
-.review.positive, .review.recommendation  {
+.review.positive,
+.review.recommendation {
   border-color: #d0e9c3;
 }
 
@@ -122,6 +121,3 @@
   list-style: "» ";
   font-size: 0.8em;
 }
-
-
-

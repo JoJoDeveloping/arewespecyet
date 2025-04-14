@@ -1,145 +1,63 @@
 {% extends "base.html" %}
-{% import "macros/level.html" as level %}
 
 {% block content %}
 
 <div class="github-fork-ribbon-wrapper left">
   <div class="github-fork-ribbon">
-    <a href="https://github.com/rust-lang/arewewebyet">Contribute on GitHub</a>
+    <a href="https://github.com/JoJoDeveloping/arewespecyet">Contribute on GitHub</a>
   </div>
 </div>
 
 <article class="article article--banner-spacing">
-  <h1>Are we <em>web</em> yet?</h1>
+  <h1>Are we <em>spec</em> yet?</h1>
 
-  <p class="tagline"><strong>Yes! And it's freaking fast!</strong></p>
-  
+  <p class="tagline"><strong>No, sadly 😢</strong></p>
   <p>
-    Rust has mature and production ready frameworks in <a href="/topics/frameworks/#pkg-actix-web">Actix Web</a> and
-    <a href="/topics/frameworks/#pkg-axum">Axum</a>, and innovative ones like <a href="/topics/frameworks/#pkg-warp">Warp</a>
-    and <a href="/topics/frameworks/#pkg-tide">Tide</a>. These provide everything you’d expect from a web framework, from routing
-    and middleware, to templating, and JSON/form handling. There are crates for everything, and more! For databases, there’s:</p>
-
-  <ul>
-    <li>
-      <a href="/topics/database/#pkg-diesel">Diesel</a>, a full-fledged ORM.
-    </li>
-    <li>
-      <a href="/topics/database/#pkg-sqlx">sqlx</a>, the async sql toolkit.
-    </li>
-    <li>
-      As well as native drivers for <a href="/topics/database/#pkg-mongodb">MongoDB</a>, <a
-        href="/topics/database/#pkg-rusqlite">SQlite</a>, <a href="/topics/database/#pkg-postgres">Postgres</a>, and <a
-        href="/topics/database/#pkg-mysql">MySQL</a>.
-    </li>
-  </ul>
-
-  {% set services = get_page(path="topics/services.md") %}
-  There are many integrations to third-party services {{ level::level(level=services.extra.level) }}, such as:
-
-  <ul>
-    <li>
-      <a href="/topics/web-apis/#pkg-rusoto_core">Rusoto</a> (AWS)
-    </li>
-    <li>
-      <a href="/topics/web-apis/#pkg-azure_sdk_for_rust">Azure</a>
-    </li>
-    <li>
-      <a href="/topics/services/#pkg-redis">Redis</a>
-    </li>
-    <li>
-      <a href="/topics/services/#pkg-elasticsearch">Elasticsearch</a>
-    </li>
-  </ul>
-
-  {% set logging = get_page(path="topics/logging.md") %}
-  {% set auth = get_page(path="topics/auth.md") %}
-  {% set templating = get_page(path="topics/templating.md") %}
-  {% set email = get_page(path="topics/email.md") %}
-
-  <p>And of course, there is plenty of support for basic web needs, like <a href="/topics/logging/">logging</a>
-    {{ level::level(level=logging.extra.level) }}, <a href="/topics/auth/">authorization</a> {{ level::level(level=auth.extra.level) }}, <a
-      href="/topics/templating/">templating</a> {{ level::level(level=templating.extra.level) }}, and <a href="/topics/email/">email</a>
-    {{ level::level(level=email.extra.level) }}.</p>
-
-  
-  <h2>Can I replace my Rails/Django/Laravel app already?</h2>
-  
-  <p>
-    Rust does not have a dominant framework at the level of Django or Rails. Most Rust frameworks are smaller and modular, similar to Flask or Sinatra. 
-    Rust does have a diverse package ecosystem, but you generally have to wire everything up yourself. Expect to put in a little bit of extra set up work 
-    to get started. If you are expecting everything bundled up for you, then Rust might not be for you just yet.
+    Rust does not (yet) have a formal specification.
+    There are various projects aiming to formalize various parts of Rust, but these are mostly working independently.
   </p>
 
-  {% set webassembly = get_page(path="topics/webassembly.md") %}
+  <h2>What about Ferroscene?</h2>
+  <p>
+    We do not consider the <a href="/topics/ferroscene">Ferroscene Language Specification</a>, which specifies a subset
+    of Rust, a
+    <em>formal</em> specification.
+    Ferroscene has been certified for use in certain safety critical environments, which is very cool!
+    But the Ferrroscene specification is still written in English prose, which is not suitable for rigorous applications
+    of formal methods.
+  </p>
 
-  <h2>WebAssembly???</h2>
+  <h2>What do you mean by <em>formal?</em></h2>
+  <p>
+    By a formal specification, we mean a mathematical definition of (parts of) Rust.
+    Such a mathematical definition must be unambiguous, leave nothing undefined, and should be written using formal
+    language. <br />
 
-  <p>Rust can run on the browser by compiling to <a href="/topics/webassembly/">WebAssembly</a>
-    {{ level::level(level=webassembly.extra.level) }}. This means that you can take advantage of the amazing Rust ecosystem on the browser! Rust and
-    WebAssembly integrate with existing Javascript tooling like NPM, Webpack, and ECMAScript modules! There are
-    some <a href="/topics/webassembly/">awesome Rust and WebAssembly</a> projects out there. For example, <a
-      href="https://github.com/yewstack/yew">Yew</a> and <a href="https://github.com/seed-rs/seed">Seed</a> let you create
-    front-end web apps with Rust in a way that feels almost like React.js.</p>
+    History <a href="https://dl.acm.org/doi/10.1145/2908080.2908081">has shown</a> that specifications in prose, like
+    the C
+    standard, tend to be ambiguous, to leave many things unclear, and thus cause different dialects to happen.
+  </p>
 
-  <p>For more information about Rust and WebAssembly, check out the <a
-      href="https://rustwasm.github.io/docs/book/introduction.html">Rust and WebAssembly Book</a>.</p>
+  <h2>Why do we need a formal specification?</h2>
+  <p>
+    Rust promises a lot of guarantees, notably memory and thread safety.
+    But does Rust actually deliver? Can you write a safe Rust program breaking these guarantees?
+    Ignoring compiler bugs, the answer is no, <em>hopefully</em>.<br />
 
-  <h2>Getting started</h2>
+    Instead of merely hoping this, we would like to formally prove this.
+    This requires a precise, formal, mathematical description of what Rust programs are, what they do, and what is
+    checked by e.g. the borrow checker&mdash;in other words, a formal specification of Rust.<br />
 
-  <p>After you’ve set up your Rust and worked yourself <a href="https://doc.rust-lang.org/book/">through “The Book”</a>,
-    you might want to check any of these resources:</p>
+    Further, there is a growing variety of formal methods tools for Rust.
+    A formal specification ensures that all these tools agree on what Rust code means, which is currently not the case.
+  </p>
 
-  <ul>
-    <li><a
-        href="https://www.youtube.com/watch?v=yNe9Xr35n4Q&amp;list=PL8lUUBadSMNBNKMYJpUE830tBiN6bxVRw&amp;ab_channel=DavidPedersen">Educational
-        Rust Live Coding - Web App From Scratch</a></li>
-    <li><a href="https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/">Actix-Web Auth
-        Microservice</a></li>
-    <li><a href="https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword/">Zero To Production In Rust
-        (Series)</a></li>
-    <li><a href="https://dev.to/werner/practical-rust-web-development-api-rest-29g1">Practical Rust Web Development
-        (Series)</a></li>
-    <li><a href="https://rocket.rs/guide/v0.5/quickstart/">Rocket Quickstart Guide</a></li>
-  </ul>
-
-  <p>There are also some real world examples that can be looked at for reference:</p>
-
-  <ul>
-    <li><a href="https://git.joinplu.me/Plume/Plume">Plume, a Federated blogging app (Rocket)</a></li>
-    <li><a href="https://github.com/jetli/rust-yew-realworld-example-app">Yew realworld app (WebAssembly)</a></li>
-    <li><a href="https://github.com/seed-rs/seed-rs-realworld">Seed realworld app (WebAssembly)</a></li>
-    <li><a href="https://github.com/LemmyNet/lemmy">Lemmy, a federated alternative to Reddit (actix-web)</a></li>
-    <li><a href="https://github.com/TatriX/realworld-rust-rocket">Rust + Rocket RealWorld example</a></li>
-  </ul>
-
-  <p>If you find yourself stuck and looking for help, you can check out the <a
-      href="https://users.rust-lang.org/c/help">official Rust forum</a>, the <a
-      href="https://stackoverflow.com/questions/tagged/rust">Rust tag on Stackoverflow</a>, or the <a
-      href="https://discord.com/invite/rust-lang">Rust Discord server</a> where you are welcome to post your questions and
-    will find excellent help.</p>
-
-  <h2>In detail</h2>
-
-  <p>Learn more about the state of web development in Rust by topic:</p>
-
-  <ul class="topic-list">
-    {% set section = get_section(path="topics/_index.md") %}
-    {% for page in section.pages %}
-    <li><a href="{{ page.permalink }}">{{page.title}}</a> {{ level::level(level=page.extra.level) }}</li>
-    {% endfor %}
-  </ul>
-
-  <ul class="legend">
-    <li>{{ level::level(level=0) }}: everything is awesome<a href="https://www.youtube.com/watch?v=9cQgQIMlwWw"
-        target="_blank">™</a>: stable, tested and mature</li>
-    <li>{{ level::level(level=1) }}: stuff's pretty great</li>
-    <li>{{ level::level(level=2) }}: getting there, stable but still maturing</li>
-    <li>{{ level::level(level=3) }}: not yet stable, but progressing</li>
-    <li>{{ level::level(level=4) }}: unstable/incomplete, needs work</li>
-    <li>{{ level::level(level=5) }}: barely there, needs serious work</li>
-    <li>{{ level::level(level=6) }}: basically nonexistent</li>
-  </ul>
+  <h2>So, what has been formalized?</h2>
+  <p>
+    Currently, there are several loosely connected groups formalizing various parts of Rust.
+    For example, people are working on the operational semantics, the borrow checker, or the trait system.
+    There is a vision for how this can all be connected, but putting this into practice is very hard.
+  </p>
 </article>
 
 {% endblock content %}
