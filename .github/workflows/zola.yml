@@ -1,9 +1,9 @@
-name: github pages
+name: deploy page
 
 on:
   push:
     branches:
-      - gh-pages
+      - master
   pull_request:
 
 jobs:
@@ -21,10 +21,16 @@ jobs:
         run: "export CURRENT_TIME=$(date '+%d %B %Y'); ./zola build"
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: ${{ github.ref == 'refs/heads/gh-pages' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: zola-build
-          cname: www.arewespecyet.rs
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SshPrivateKey }}
+          HOST_DIR: ${{ secrets.HostDir }}
+          SSH_USERNAME: ${{ secrets.SshUsername }}
+          HOST: ${{ secrets.Host }}
+        run: |
+          apt update -y && apt-get install -y --no-install-recommends rsync
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${SSH_PRIVATE_KEY}"
+          mkdir -p ~/.ssh/
+          ssh-keyscan -H ${HOST} >> ~/.ssh/known_hosts
+          rsync -r --delete-after public/* "${SSH_USERNAME}@${HOST}:${HOST_DIR}"
+
