@@ -18,7 +18,7 @@ It gives a detailed account of many aspects of the language, and is [sometimes](
 
 Unfortunately, the specification does not apply this level of rigor everywhere.
 Large parts of Rust are only described in broad terms.
-For example, the spec only gives a short, "axiomatic" [account](https://spec.ferrocene.dev/ownership-and-deconstruction.html#references) of borrow checking
+For example, the spec only gives a short, "axiomatic" [account](https://spec.ferrocene.dev/ownership-and-deconstruction.html#references) of borrow checking.
 It does not describe how the borrow checker actually works (in terms of an algorithm), and the given rules are written in prose, which makes them abiguous.
 
 The Ferroscene Language Specification has now been [donated](https://rustfoundation.org/media/ferrous-systems-donates-ferrocene-language-specification-to-rust-project/) to the Rust project, to be used as a starting point for Rust's specification.

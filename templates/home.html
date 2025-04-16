@@ -11,58 +11,8 @@
 <article class="article article--banner-spacing">
   <h1>Are we <em>spec</em> yet?</h1>
 
-  <p class="tagline"><strong>No, sadly 😢</strong></p>
-  <p>
-    Rust does not (yet) have a formal specification.
-    There are various projects aiming to formalize various parts of Rust, but these are mostly working independently.
-  </p>
-
-  <h2>What about Ferroscene?</h2>
-  <p>
-    We do not consider the <a href="/topics/ferroscene">Ferroscene Language Specification</a>, which specifies a subset
-    of Rust, a
-    <em>formal</em> specification.
-    Ferroscene has been certified for use in certain safety critical environments, which is very cool!
-    But the Ferrroscene specification is still written in English prose, and it is not suitable for rigorous
-    applications
-    of formal methods.
-    It is also unofficial, since it is not maintained by a Rust team.
-  </p>
-
-  <h2>What do you mean by <em>formal?</em></h2>
-  <p>
-    By a formal specification, we mean a mathematical definition of (parts of) Rust.
-    Such a mathematical definition must be unambiguous, leave nothing undefined, and should be written using formal
-    language. <br />
-
-    History <a href="https://dl.acm.org/doi/10.1145/2908080.2908081">has shown</a> that specifications in prose, like
-    the C
-    standard, tend to be ambiguous, to leave many things unclear, and thus give rise to conflicting interpretations and
-    incompatible tools.
-  </p>
-
-  <h2>Why do we need a formal specification?</h2>
-  <p>
-    Rust promises a lot of guarantees, notably memory and thread safety.
-    But does Rust actually deliver? Can you write a safe Rust program breaking these guarantees?
-    Ignoring compiler bugs, the answer is no, <em>hopefully</em>.<br />
-
-    Instead of merely hoping this, we would like to formally prove this.
-    This requires a precise, formal, mathematical description of what Rust programs are, what they do, and what is
-    checked by e.g. the borrow checker&mdash;in other words, a formal specification of Rust.<br />
-
-    Further, there is a growing variety of tools consuming Rust, like <a
-      href="https://blog.rust-lang.org/2024/11/07/gccrs-an-alternative-compiler-for-rust/">gccrs</a> or formal
-    verification tools.
-    A formal specification ensures that all these tools agree on what Rust code means, which is currently not the case.
-  </p>
-
-  <h2>So, what has been formalized?</h2>
-  <p>
-    Currently, there are several loosely connected groups formalizing various parts of Rust.
-    For example, people are working on the operational semantics, the borrow checker, or the trait system.
-    There is a vision for how this can all be connected, but putting this into practice is very hard.
-  </p>
+  <p class="tagline"><strong>{{section.extra.answer}}</strong></p>
+  {{ section.content | markdown | safe }}
 </article>
 
 {% endblock content %}
