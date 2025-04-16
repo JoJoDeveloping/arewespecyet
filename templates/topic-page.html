@@ -12,25 +12,6 @@
 
   {{ page.content | safe }}
 
-  {% if page.extra.upcoming %}
-  <h4>Upcoming</h4>
-  The following crates look awesome! But they have not yet reached maturity.
-  <ul class="upcoming">
-    {% for upcoming in page.extra.upcoming %}
-    <li> <a href="{{upcoming.url}}">{{upcoming.name}}</a> {{upcoming.desc | markdown | safe }} </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-
-  {% if page.extra.missing %}
-  <h3>Still missing...</h3>
-  <ul>
-    {% for missed in page.extra.missing %}
-    <li> {{missed | markdown | safe }} </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-
   {% if page.extra.news_tag %}
 
   {% set section = get_section(path="news/_index.md") %}
@@ -59,8 +40,8 @@
 
   <div class="alert-box">
     <h3>Do you know something we don't?</h3>
-    <p>Did we miss an important crate? Or maybe you just recently launched something that should be listed here, too? <a
-        href="https://github.com/JoJoDeveloping/arewespecyet/issues/new" target="_blank">Let us know</a>!
+    <p>Did we miss something important? Or maybe you just recently launched something that should be listed here, too?
+      <a href="https://github.com/JoJoDeveloping/arewespecyet/issues/new" target="_blank">Let us know</a>!
     </p>
   </div>
 
