@@ -26,11 +26,11 @@ jobs:
           HOST_DIR: ${{ secrets.HostDir }}
           SSH_USERNAME: ${{ secrets.SshUsername }}
           HOST: ${{ secrets.Host }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SshKnownHosts }}
         run: |
-          apt update -y && apt-get install -y --no-install-recommends rsync
           eval "$(ssh-agent -s)"
           ssh-add - <<< "${SSH_PRIVATE_KEY}"
           mkdir -p ~/.ssh/
-          ssh-keyscan -H ${HOST} >> ~/.ssh/known_hosts
+          echo $SSH_KNOWN_HOSTS >> ~/.ssh/known_hosts
           rsync -r --delete-after public/* "${SSH_USERNAME}@${HOST}:${HOST_DIR}"
 
