@@ -24,4 +24,4 @@ Further, there is a growing variety of tools consuming Rust, like [gccrs](https:
 
 ## So, what has been formalized?
 
-Currently, there are several loosely connected groups formalizing various parts of Rust. For example, people are working on the operational semantics, the borrow checker, or the trait system. There is a vision for how this can all be connected, but putting this into practice is very hard.
+Currently, there are several loosely connected groups formalizing various parts of Rust. For example, people are working on the operational semantics, the borrow checker, or the trait system. We have a [vision](/topics/vision) for how this can all be connected, but putting this into practice is very hard.
