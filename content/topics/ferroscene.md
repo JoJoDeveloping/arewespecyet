@@ -3,7 +3,7 @@ title = "Ferroscene"
 
 [extra]
 
-intro = "Ferroscene is a specification that aims to certify Rust for certain safety-critical environments. Read more about what it does, and why we do not consider it a formal specification."
+intro = "Ferroscene, a specification that aims to certify Rust for certain safety-critical environments, and why we do not consider it a formal specification."
 
 newstag = "ferroscene"
 +++

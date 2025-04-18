@@ -3,7 +3,7 @@ title = "Rust Verification Tools"
 
 [extra]
 
-intro = "Read this to learn more about what is verification, which tools there are for Rust, and why they rely on a formal specification."
+intro = "What verification is, which tools there are for Rust, and why they need a formal specification."
 
 newstag = "verification"
 +++
