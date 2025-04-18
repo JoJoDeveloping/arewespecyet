@@ -7,7 +7,7 @@
   <h1>{{page.title}}</h1>
 
   {% if page.extra.intro %}
-  {{ page.extra.intro | markdown | safe }}
+  <p class="pageintro">{{ page.extra.intro | markdown( inline = true ) | safe }}</p>
   {% endif %}
 
   {{ page.content | safe }}
