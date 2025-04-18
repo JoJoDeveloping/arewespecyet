@@ -40,4 +40,4 @@ In fact, WebAssembly already has [a specification](https://dl.acm.org/doi/10.114
 It has a machine-readable specification at its foundation, and an English prose specification is generated from that; ensuring the spec is easly readable while avoiding all the pitfalls laid out above.
 The specification is written "as a program," so it is naturally executable.
 
-Rust could do the same.
+Rust could have the same.
