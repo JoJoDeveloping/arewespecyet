@@ -7,9 +7,9 @@ answer = "No, sadly 😢"
 
 Rust does not (yet) have a formal specification. There are various projects aiming to formalize various parts of Rust, but these are mostly working independently.
 
-## What about Ferroscene?
+## What about Ferrocene?
 
-We do not consider the [Ferroscene Language Specification](/topics/ferroscene), which specifies a subset of Rust, a _formal_ specification. Ferroscene has been certified for use in certain safety critical environments, which is very cool! But the Ferrroscene specification is still written in [English prose](/topics/englishprose), and it is not suitable for rigorous applications of formal methods. It is also unofficial, since it is not maintained by a Rust team.
+We do not consider the [Ferrocene Language Specification](/topics/ferrocene), which specifies a subset of Rust, a _formal_ specification. Ferrocene has been certified for use in certain safety critical environments, which is very cool! But the Ferrroscene specification is still written in [English prose](/topics/englishprose), and it is not suitable for rigorous applications of formal methods. It is also unofficial, since it is not maintained by a Rust team.
 
 ## What do you mean by _formal?_
 
