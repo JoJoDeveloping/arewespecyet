@@ -23,11 +23,11 @@ Already the goal of a machine-readable specification ensures that it is unambigu
 
 Of course, the specification is not made for machines, but for humans, so it should also be _easy to understand for humans_.
 There are several things to consider here.
-First, we argue that to some extend, formality increases readability.
-Most languages already use BNFs to specify their language's syntax, and it seems hard to imagine how the same clarity could be achieved if one was limited to natural language.
+First, we argue that to some extent, formality increases readability.
+Most languages already use BNFs to specify their language's syntax, and it seems hard to imagine how the same clarity could be achieved if one were limited to natural language.
 Similarly, we hope that other formalisms can make the specification easier to understand, if the formalism is sufficiently explained.
-Additionally, since the spec is human-readable, a formal description could concievably translated into a more human-readable form.
-Such a derived English presentation of the rules of a formalism can be included in the specification, even if it is not the autoritative root source, if it is necessary for clarity.
+Additionally, since the spec is human-readable, a formal description could concievably be translated into a more human-readable form.
+Such a derived English presentation of the rules of a formalism can be included in the specification, even if it is not the authoritative root source, if it is necessary for clarity.
 
 Beyond that, we also argue that an executable specification is much easier to approach, compared to a large document of complicated English sentences.
 It can be probed on small example programs, to explore the semantics interactively.
@@ -37,7 +37,7 @@ The target audience of the specification, Rust programmers, are used to reading 
 
 This is not a pipe dream!
 In fact, WebAssembly already has [a specification](https://dl.acm.org/doi/10.1145/3656440) that ticks all the boxes here:
-It has a machine-readable specification at its foundation, and an English prose specification is generated from that; ensuring the spec is easly readable while avoiding all the pitfalls laid out above.
+It has a machine-readable specification at its foundation, and an English prose specification is generated from that; ensuring the spec is easily readable while avoiding all the pitfalls laid out above.
 The specification is written "as a program," so it is naturally executable.
 
 Rust could have the same.
